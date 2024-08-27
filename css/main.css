@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth !important;
+}
+/* -------------------------- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+  padding: 50px 100px;
+}
+.header h1{
+  font-size: 2em;
+}
+.header__nav-list{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  font-size: 1.5em;
+}
+.header.stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.header:not(.stuck) {
+  opacity: 1;
+  visibility: visible;
+  max-height: none;
+  transform: translateY(0);
+}
+
+.header.stuck-hide {
+  opacity: 0;
+  visibility: hidden;
+  max-height: 1px;
+  transform: translateY(-100%);
+  transition: opacity 0.3s, transform 0.3s;
+}
